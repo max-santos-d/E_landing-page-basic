@@ -82,7 +82,7 @@ h1 {
 
 .menu h1 {
     font-size: 3rem;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .menu h1 a{
@@ -107,6 +107,10 @@ h1 {
     gap: var(--gap);
     align-items: center;
     min-height: 100vh;
+}
+
+.img-content{
+    margin: auto;
 }
 
 .img-content img{
