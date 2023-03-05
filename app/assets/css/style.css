@@ -105,17 +105,21 @@ thead th{
     padding: 8rem var(--gap);
 }
 
-.menu {
-    display: flex;
-    justify-content: space-between;
+.menu {    
     position: fixed;
-    align-items: center;
-    margin: 0 auto;
     top: 0;
     left: 0;
     right: 0;
     border-bottom: 0.1rem solid var(--light-gray-color);
     z-index: 1;
+}
+
+.menu-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 120rem;
 }
 
 .menu h1 {
@@ -226,4 +230,16 @@ thead th{
 
 .gallery-img img:hover{
     transform: translate(-3%, -3%) scale(1.2) rotate(5deg);
+}
+
+@media (max-width: 62rem){
+
+    .grid,
+    .page-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid{
+        align-items: center;
+    }
 }
