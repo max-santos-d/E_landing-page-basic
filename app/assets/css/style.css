@@ -1,5 +1,5 @@
 /* Variables */
-:root{
+:root {
     --primary-color: #0A1128;
     --secondary-color: #808080;
     --white-color: #FFFFFF;
@@ -33,11 +33,11 @@ h5 {
     font-family: 'Montserrat', sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-p{
+p {
     margin-bottom: 3rem;
 }
 
@@ -46,19 +46,19 @@ h1 {
     text-transform: uppercase;
 }
 
-h2{
+h2 {
     font-size: 4rem;
     text-transform: uppercase;
     margin-bottom: 3rem;
 }
 
-table{
+table {
     min-width: 36rem;
     width: 100%;
     border-collapse: collapse;
 }
 
-table caption{
+table caption {
     font-style: italic;
     font-size: 2rem;
     text-align: left;
@@ -66,19 +66,20 @@ table caption{
 }
 
 table td,
-table th{
+table th {
     white-space: nowrap;
     padding: 1rem;
     text-align: left;
     border: 0.1rem solid var(--light-gray-color);
 }
-tfoot td{
+
+tfoot td {
     text-align: center;
     font-weight: bold;
 }
 
 tfoot td,
-thead th{
+thead th {
     background: var(--light-gray-color);
 }
 
@@ -89,12 +90,12 @@ thead th{
     color: var(--white-color);
 }
 
-.white-bg{
+.white-bg {
     background: var(--white-color);
     color: var(--primary-color);
 }
 
-.main-content{
+.main-content {
     display: flex;
     flex-flow: column nowrap;
     text-align: center;
@@ -105,7 +106,7 @@ thead th{
     padding: 8rem var(--gap);
 }
 
-.menu {    
+.menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -114,7 +115,7 @@ thead th{
     z-index: 1;
 }
 
-.menu-content{
+.menu-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,28 +128,28 @@ thead th{
     padding: 1rem;
 }
 
-.menu h1 a{
+.menu h1 a {
     color: var(--primary-color);
 }
 
-.menu ul{
+.menu ul {
     list-style: none;
     display: flex;
 }
 
-.menu ul a{
+.menu ul a {
     padding: 2rem;
     font-size: 1.8rem;
     display: block;
     color: var(--primary-color);
 }
 
-.footer{
+.footer {
     text-align: center;
     padding: 3rem;
 }
 
-.footer a{
+.footer a {
     color: inherit;
 }
 
@@ -161,43 +162,43 @@ thead th{
     min-height: 100vh;
 }
 
-.img-content{
+.img-content {
     margin: auto;
 }
 
-.img-content img{
+.img-content img {
     max-width: 100%;
 }
 
-.text-content{
+.text-content {
     max-width: 64rem;
 }
 
-.grid-content{
+.grid-content {
     flex-flow: column wrap;
     text-align: left;
     counter-reset: grid-counter;
 }
 
-.grid-heading{
+.grid-heading {
     margin-bottom: 5rem;
 }
 
-.grid{
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
     counter-reset: grid-counter;
 }
 
-.grid h3{
+.grid h3 {
     font-size: 3rem;
     padding-left: 4rem;
     position: relative;
     padding-bottom: 2rem;
 }
 
-.grid h3::before{
+.grid h3::before {
     counter-increment: grid-counter;
     content: counter(grid-counter);
     position: absolute;
@@ -208,16 +209,16 @@ thead th{
     transform: rotate(5deg);
 }
 
-.responsive-table{
+.responsive-table {
     overflow: hidden;
     overflow-x: auto;
 }
 
-.gallery-grid{
+.gallery-grid {
     max-width: 80rem;
 }
 
-.gallery-img{
+.gallery-img {
     max-width: 24rem;
     max-height: 24rem;
     overflow: hidden;
@@ -228,18 +229,79 @@ thead th{
     transition: all 300ms ease-in-out;
 }
 
-.gallery-img img:hover{
+.gallery-img img:hover {
     transform: translate(-3%, -3%) scale(1.2) rotate(5deg);
 }
 
-@media (max-width: 62rem){
+.contact-form {
+    grid-column: span 2;
+}
+
+.contact-form .form-grid{
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.form-group{
+    flex: 1 1 32rem;
+}
+
+.full-grid{
+    flex: 1 1 100%;
+}
+
+.form-group input,
+.form-group textarea{
+    font-size: 2rem;
+    width: 100%;
+    border: 0.05rem solid var(--primary-color);
+    font-size: 2rem;
+    padding: 1rem;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border: none;
+    box-shadow: 0 0 0.5rem 0.1rem var(--crimson);
+}
+
+.form-grid legend{
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group button{
+    font-size: 2.5rem;
+    background: none;
+    padding: 1.5rem 3rem;
+    border: 0.05rem solid var(--crimson);
+    color: var(--crimson);
+}
+
+.form-group button:hover{
+    color: var(--white-color);
+    background: var(--crimson);
+    box-shadow: 0 0 0.5rem 0.1rem var(--crimson);
+}
+
+@media (max-width: 62rem) {
 
     .grid,
-    .page-content{
+    .page-content {
         grid-template-columns: 1fr;
     }
-    
-    .gallery-grid{
+
+    .gallery-grid {
         align-items: center;
     }
 }
