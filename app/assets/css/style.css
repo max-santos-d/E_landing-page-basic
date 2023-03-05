@@ -163,11 +163,13 @@ thead th {
 }
 
 .img-content {
-    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .img-content img {
     max-width: 100%;
+    height: auto;
 }
 
 .text-content {
@@ -296,12 +298,24 @@ thead th {
 
 @media (max-width: 62rem) {
 
-    .grid,
-    .page-content {
+    h1, h2{
+        font-size: 3rem;
+    }
+
+    h3, h3::before{
+        font-size: 2.5rem;
+    }
+
+    .page-content,
+    .grid{
         grid-template-columns: 1fr;
     }
 
     .gallery-grid {
         align-items: center;
+    }
+
+    .contact-form{
+        grid-column: span 1;
     }
 }
