@@ -239,7 +239,7 @@ thead th {
     grid-column: span 2;
 }
 
-.contact-form .form-grid{
+.contact-form .form-grid {
     border: none;
     display: flex;
     flex-direction: row;
@@ -247,16 +247,16 @@ thead th {
     gap: var(--gap);
 }
 
-.form-group{
+.form-group {
     flex: 1 1 32rem;
 }
 
-.full-grid{
+.full-grid {
     flex: 1 1 100%;
 }
 
 .form-group input,
-.form-group textarea{
+.form-group textarea {
     font-size: 2rem;
     width: 100%;
     border: 0.05rem solid var(--primary-color);
@@ -266,23 +266,23 @@ thead th {
 }
 
 .form-group input:focus,
-.form-group textarea:focus{
+.form-group textarea:focus {
     border: none;
     box-shadow: 0 0 0.5rem 0.1rem var(--crimson);
 }
 
-.form-grid legend{
+.form-grid legend {
     font-style: italic;
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
 
-.form-group label{
+.form-group label {
     display: block;
     margin-bottom: 1rem;
 }
 
-.form-group button{
+.form-group button {
     font-size: 2.5rem;
     background: none;
     padding: 1.5rem 3rem;
@@ -290,24 +290,30 @@ thead th {
     color: var(--crimson);
 }
 
-.form-group button:hover{
+.form-group button:hover {
     color: var(--white-color);
     background: var(--crimson);
     box-shadow: 0 0 0.5rem 0.1rem var(--crimson);
 }
 
+.close-menu{
+    display: none;
+}
+
 @media (max-width: 62rem) {
 
-    h1, h2{
+    h1,
+    h2 {
         font-size: 3rem;
     }
 
-    h3, h3::before{
+    h3,
+    h3::before {
         font-size: 2.5rem;
     }
 
     .page-content,
-    .grid{
+    .grid {
         grid-template-columns: 1fr;
     }
 
@@ -315,7 +321,52 @@ thead th {
         align-items: center;
     }
 
-    .contact-form{
+    .contact-form {
         grid-column: span 1;
+    }
+
+    .menu{
+        bottom: 0;
+        align-items: center;
+    }
+    
+    .menu-content,
+    .menu-content ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menu{
+        display: none;
+    }
+    .menu-content{
+        height: 100vh;        
+    }
+
+    .close-menu-label::after{
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 3rem;
+        right: 3rem;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-size: 2rem;
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        padding: 1rem;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .close-menu:checked~.menu{
+        display: block;
+    }
+
+    .close-menu:checked~.close-menu-label::after{
+        content: '×';
     }
 }
