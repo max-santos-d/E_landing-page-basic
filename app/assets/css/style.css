@@ -137,11 +137,28 @@ thead th {
     display: flex;
 }
 
-.menu ul a {
+.menu ul li a {
     padding: 2rem;
     font-size: 1.8rem;
     display: block;
     color: var(--primary-color);
+    position: relative;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: var(--crimson);
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover:after {
+    width: 50%;
+    left: 25%;
 }
 
 .footer {
@@ -296,7 +313,7 @@ thead th {
     box-shadow: 0 0 0.5rem 0.1rem var(--crimson);
 }
 
-.close-menu{
+.close-menu {
     display: none;
 }
 
@@ -325,26 +342,27 @@ thead th {
         grid-column: span 1;
     }
 
-    .menu{
+    .menu {
         bottom: 0;
         align-items: center;
     }
-    
+
     .menu-content,
     .menu-content ul {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    
-    .menu{
+
+    .menu {
         display: none;
     }
-    .menu-content{
-        height: 100vh;        
+
+    .menu-content {
+        height: 100vh;
     }
 
-    .close-menu-label::after{
+    .close-menu-label::after {
         content: '☰';
         position: fixed;
         z-index: 2;
@@ -362,11 +380,11 @@ thead th {
         border-radius: 50%;
     }
 
-    .close-menu:checked~.menu{
+    .close-menu:checked~.menu {
         display: block;
     }
 
-    .close-menu:checked~.close-menu-label::after{
+    .close-menu:checked~.close-menu-label::after {
         content: '×';
     }
 }
